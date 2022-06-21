@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WASA Bill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <script src="html2pdf.bundle.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+
+</head>
+<body class="vendorListHeading">
+    <button id="printPageButton" onclick="window.print()">Print this page</button>
+    <!-- <button onclick="generate_pdf()">download pdf</button>  -->
+    <div class="canvas_div_pdf" id="canvas_div_pdf" >
+    <img id="wasahydlogo" src="./wasabanner.PNG" alt="wasa logo">
+    <br><br>
+    <table>
+        <tr>
+            <td  style="width: 700px;">0 3 0 3 0 0 8 6 2 3 2 <h5  style="color: red; float: right;">0 3 - 0 3 - 0 0 8 6 2 - 3 - D</h5></td>
+            <td id="issuedate"><strong>Issue Date</strong> </td>
+            <td id="duedate"><strong>Due Date</strong></td>
+            <td id="billingmonth"><strong>Billing Month</strong></td>
+        </tr>
+        <tr >
+            <td rowspan="4" id="nameandaddress"><strong>NAME & ADDRESS</strong>
+            </td>
+            <td>1/6/2022</td>
+            <td>6/18/2022</td>
+            <td>Jun</td>
+        </tr>
+        <tr>
+            <td><strong>Tariff/Category</strong></td>
+            <td></td>
+            <td><strong>Dia</strong</td>
+        </tr>
+        <tr><td colspan="3"><strong>Billing Status</strong></td></tr>
+        <tr><td id="particulars" colspan="3"><strong>Particulars</strong></td></tr>
+        <!-- <tr>
+            
+        </tr> -->
+        <!-- <tr>
+            <td>Month</td>
+            <td>Payments</td>
+            <td>Notices</td>
+        </tr> -->
+    </table>
+    <table>
+        
+        <tr>
+            <td rowspan="14" class="rotated"><strong id="paymenthistory">Payment History</strong></td>
+        </tr>
+        <tr>
+            <td><strong>MONTH</strong></td>
+            <td><strong>PAYMENT</strong></td>
+            <td style="vertical-align: top;" colspan="2" rowspan="3" id="notices">
+                <strong>NOTICES</strong>
+            </td>
+            <td rowspan="4" class="rotated"><strong>Current</strong></td>
+            <td style="width: 187px;"><strong>Water</strong></td>
+            <td style="width: 187px;">152000</td>
+        </tr>
+        <tr>
+            <td>JAN-22</td>
+            <td>450</td>
+            <td><strong>Sewerage</strong></td>
+            <td>79</td>
+        </tr>
+        <tr>
+            <td>FEB-22</td>
+            <td>450</td>
+            <td><strong>Construction</strong></td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>MARCH-22</td>
+            <td>450</td>
+            <td colspan="2" style="text-align: center;"><strong>Tariff Rate</strong></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td>APRIL-22</td>
+            <td>450</td>
+            <td><strong>Water</strong></td>
+            <td>15834234234</td>
+            <td rowspan="4" class="rotated"><strong>Arrears</strong></td>
+            <td><strong>Water</strong></td>
+            <td>15845345345</td>
+        </tr>
+        <tr>
+            <td>MAY-22</td>
+            <td>450</td>
+            <td><strong>Sewerage</strong></td>
+            <td>79</td>
+            <td><strong>Sewerage</strong></td>
+            <td>79</td>
+        </tr>
+        <tr>
+            <td>JUN-22</td>
+            <td>450</td>
+            <td><strong>Construction</strong></td>
+            <td>0</td>
+            <td><strong>Construction</strong></td>
+            <td>0</td>
+            
+        </tr>
+        <tr>
+            <td>JULY-22</td>
+            <td>450</td>
+            
+            <td style="text-align: center;" colspan="2"><strong>TOTAL OUTSTANDING ARREARS</strong></td>
+            <td><strong>Service Charges</strong></td>
+            <td>0</td>
+           
+        </tr>
+        <tr>
+            <td>AUG-22</td>
+            <td>450</td>
+            <td><strong>Water</strong></td>
+            <td>158</td>
+            <td rowspan="5" class="rotated"><strong>Payable</strong></td>
+            <td class="redcolor" rowspan="2"><strong>Within due date</strong></td>
+            <td rowspan="2">566</td>
+        </tr>
+        <tr>
+            <td>SEPT-22</td>
+            <td>450</td>
+            <td><strong>Sewerage</strong></td>
+            <td>79</td>
+            
+        </tr>
+        <tr>
+            <td>OCT-22</td>
+            <td>450</td>
+            <td><strong>Construction</strong></td>
+            <td>0</td>
+            <td><strong>Surcharge</strong></td>
+            <td>24</td>
+            
+        </tr>
+        <tr>
+            <td>NOV-22</td>
+            <td>450</td>
+            
+            <td style="vertical-align: top;" colspan="2" rowspan="2"><strong>Total</strong></td>
+            <td class="redcolor" rowspan="2" ><strong>After due date</strong></td>
+            <td rowspan="2">566</td>
+        </tr>
+        <tr>
+            <td>DEC-22</td>
+            <td>450</td>
+        </tr>
+    </table><br>
+    <div id="cumpulsoryinformation">
+        <small id="deparmentcopy"><strong>(Deparment Copy)</strong></small>
+        <!-- <br> -->
+        <h4 class="underline" style=" display: inline;">Cumpulsory Information</h4>
+        <h5 class="underline urdu" style="float: right; " >مندرجہ ذیل معلومات صارفین کو فراہم کرنا ضروری ہے۔</h5>
+        <br><br><h6 class="floatleft">Name: </h6><h6 class="floatright urdu">نام</h6><br><br>
+        <h6 class="floatleft">Father's Name: </h6><h6 class="floatright urdu">ولدیت</h6><br><br>
+        <h6 class="floatleft">CNIC: </h6><h6 class="floatright urdu">شناختی کارڈ</h6><br><br>
+        <h6 class="floatleft">Mobile No.: </h6><h6 class="floatright urdu">موبائل نمبر</h6><br><br>
+        <h6 class="floatleft">Email ID for e-Billing</h6><h6 class="floatright urdu">ایڈریس Email </h6><br><br>
+        <h6 class="floatright urdu">  وزٹ کریں یا فون نمبر9200688 پر رابطہ کریں www.wasahyd.com ڈپلیکیٹ بل حاصل کرنے کے لیے</h6>
+        <br>
+        <!-- <hr class="hrline">  -->
+    </div>
+    <div>
+        <h1 style="text-align: center;">WATER AND SANITATION AGENCY, (WASA) </h1>
+        <h1 style="text-align: center;">HDA, HYDERABAD </h1>
+    </div>
+    <table>
+        <tr>
+            <td  style="width: 700px;">0 3 0 3 0 0 8 6 2 3 2</td>
+            <td id="issuedate"><strong>Issue Date</strong> </td>
+            <td id="duedate"><strong>Due Date</strong></td>
+            <td id="billingmonth"><strong>Billing Month</strong></td>
+        </tr>
+        <tr >
+            <td rowspan="3" id="nameandaddress"><strong>NAME & ADDRESS</strong>
+            </td>
+            <td>1/6/2022</td>
+            <td>6/18/2022</td>
+            <td>Jun</td>
+        </tr>
+        
+        <tr>
+            <td><strong>Tariff/Category</strong></td>
+            <td></td>
+            <td><strong>Dia</strong</td>
+        </tr>
+        <tr><td></td></tr>
+        <tr><td id="particulars" colspan="1"><strong>Particulars</strong></td></tr>
+    </table>
+    <table>
+        <tr>
+            <td class="lasttablewidth"></td>
+            <td class="lasttablewidth"><strong>Water</strong></td>
+            <td class="lasttablewidth"><strong>Sewerage</strong> </td>
+            <td class="lasttablewidth"><strong>Construction</strong> </td>
+            <td class="lasttablewidth"><strong>Service Charges</strong> </td>
+            <td class="lasttablewidth"><strong>Total</strong> </td>
+            <td rowspan="4" class="rotated"><strong>Payable</strong></td>
+            <td class="redcolor" ><strong>Within due date</strong></td>
+            <td>566</td>
+        </tr>
+        <tr>
+            <td>Current</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><strong>Surcharge</strong></td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>Arrears</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="width: 178px;" class="redcolor" rowspan="2" ><strong>After due date</strong></td>
+            <td style="width: 200px;" rowspan="2">566</td>
+        </tr>
+        <tr>
+            <td colspan="4">33008623 WASA ONLINE BILL
+            </td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <td colspan="9">
+                barcode
+                <h2 style="float: right;">WASA ONLINE BILL</h2>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="editor"></div>
+
+<style>
+    
+@page {
+      size: A4;
+ }
+    .vendorListHeading {
+  /* background-color: #1a4567; */
+  /* color: white; */
+  -webkit-print-color-adjust: exact; 
+    }
+    .lasttablewidth{
+        width: 116.5px;
+    }
+    body{
+        background-color: white;
+    }
+    @media print {
+        #printPageButton {
+        display: none;
+    }
+    }
+    .floatright{
+        float: right;
+    }
+    .floatleft{
+        float: left;
+    }
+    /* .makeinline{ */
+        
+        /* display: inline-block; */
+   /* border-bottom: 1px solid #000;  */
+   /* line-height: 0.1em; */
+   /* margin: 10px 0 20px;  */
+    /* } */
+    body{
+        margin: 20px;
+    }
+    .hrline{
+        border-top: 1px solid black;
+        width: 90%;
+        display: inline-block;
+    }
+    .underline{
+        text-decoration: underline;
+    }
+    #cumpulsoryinformation{
+        width: 1140px;
+        padding: 15px;
+        background-color:rgb(233, 166, 166);
+    }
+    .urdu{
+        font-family: 'Noto Nastaliq Urdu', serif;
+    }
+    #deparmentcopy{
+        float: right;
+    }
+    #notices{
+        width: 472px;
+    }
+    #firstwater{
+        width: 345px;
+    }
+    .redcolor{
+        background-color:rgb(233, 166, 166);
+    }
+    .rotated {
+        /* writing-mode: tb-rl; */
+        width: 20px;
+        padding: 0;
+        transform: rotate(-90deg);
+    }
+    /* #paymenthistory{
+        font-size: 40px;
+    } */
+    #issuedate{
+        width: 145px;
+        
+    }
+    #particulars{
+        text-align: center;
+    }
+    #nameandaddress{
+        /* width: 700px; */
+        /* height: 200px; */
+        text-align: left;
+        vertical-align: top;
+    }
+    .dates{
+        height: 60px;
+        width: 145px;
+        background-color: rgb(223, 223, 178);
+    }
+    #duedate{
+        width: 145px;
+    }
+    #billingmonth{
+        width: 145px;
+    }
+    table, th, td {
+        border: 1px solid;
+    }
+    table{
+        border-collapse: collapse;
+    }
+    /* #wasahydlogo{
+        width: 100px;
+        float: left;
+    } */
+    @media print {
+  #printPageButton {
+    display: none;
+  }
+}
+</style>
+
+<script>
+
+
+function generate_pdf(){
+
+var HTML_Width = $(".canvas_div_pdf").width();
+var HTML_Height = $(".canvas_div_pdf").height();
+var top_left_margin = 15;
+var PDF_Width = HTML_Width+(top_left_margin*2);
+var PDF_Height = (PDF_Width*1.5)+(top_left_margin*2);
+var canvas_image_width = HTML_Width;
+var canvas_image_height = HTML_Height;
+
+var totalPDFPages = Math.ceil(HTML_Height/PDF_Height)-1;
+    
+html2canvas($(".canvas_div_pdf")[0],{allowTaint:true}).then(function(canvas) {
+    canvas.getContext('2d');
+    
+    console.log(canvas.height+"  "+canvas.width);
+                    
+    var imgData = canvas.toDataURL("image/jpeg", 1.0);
+    var pdf = new jsPDF('p', 'pt',  [PDF_Width, PDF_Height]);
+      pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin,canvas_image_width,canvas_image_height);
+    
+        
+    for (var i = 1; i <= totalPDFPages; i++) { 
+        pdf.addPage(PDF_Width, PDF_Height);
+        pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+    }
+    const date_time = new Date();
+  pdf.save(date_time);
+});	
+};
+
+function generatePDF() {
+//     const element = document.getElementById("bill");
+// const opt = {
+//   margin: 1,
+//   filename: "myfile.pdf",
+//   image: { type: "jpeg", quality: 0.98 },
+//   html2canvas: { scale: 2 },
+//   jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+// };
+
+//  html2pdf().set(opt).from(element).save();
+    //     console.log("okay");
+	// 			// Choose the element that our invoice is rendered in.
+	// 			const element = document.getElementById('bill');
+    //             console.log(element);
+    //             // html2pdf(element);
+	// 			// Choose the element and save the PDF for our user.
+    //             var opt = {
+    //            filename: 'bill.pdf',
+    //         //    image: { type: 'jpeg', quality: 0.98 },
+    //            jsPDF: { unit: 'in', format: 'a4'}
+    // };
+	// 			html2pdf().from(element).save();
+    //             // html2pdf(element).output('save.pdf')
+	// 		}
+//     var element = document.getElementById('bill');
+// var options = {
+//   jsPDF: {
+//     format: 'a4'
+//   },
+//   html2canvas:  { dpi, letterRendering: true, useCORS: true,     logging: true},
+//   margin: 1,
+//   image: {type: 'jpeg', quality: 1}
+// };
+// //with options
+// html2PDF().set(options).from(element).toPdf().save('myfile.pdf');
+// //without options
+// html2PDF().from(element).toPdf().save('myfile.pdf');
+
+
+}
+
+</script>
+</body>
+
+</html>
